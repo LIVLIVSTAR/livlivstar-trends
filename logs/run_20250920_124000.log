@@ -1,0 +1,28 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250920124000
+Username: DESKTOP-OR0CUVF\DoniHaley
+RunAs User: DESKTOP-OR0CUVF\DoniHaley
+Configuration Name: 
+Machine: DESKTOP-OR0CUVF (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 9344
+PSVersion: 5.1.19041.6328
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.6328
+BuildVersion: 10.0.19041.6328
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== LivLiv Trends run 20250920_124000 ===
+PWD: C:\livliv-trends
+PS C:\livliv-trends> Write-Host "=== Done ==="
+Stop-Transcript | Out-Null
+
+=== Done ===
+**********************
+Windows PowerShell transcript end
+End time: 20250920124054
+**********************
