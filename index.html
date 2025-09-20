@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LivLivStar Trends</title>
+  <style>
+    :root { --card: #ffffff; --border:#eaeaea; --text:#222; --muted:#666; --bg:#fafafa; }
+    html,body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .wrap { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 28px; margin: 0 0 8px; }
+    .updated { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+    article.card {
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin: 16px 0;
+      box-shadow: 0 1px 0 rgba(0,0,0,.02);
+    }
+    .head { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .head h3 { margin:0; font-size:18px; }
+    button.share {
+      padding: 8px 12px; border:1px solid var(--border); border-radius: 10px;
+      background:#fff; cursor:pointer;
+    }
+    h4 { margin:18px 0 8px; font-size:16px; }
+    h5 { margin:12px 0 6px; font-size:14px; color:var(--muted); }
+    ul { margin: 6px 0 10px 18px; }
+    li { margin: 4px 0; line-height:1.35; }
+    .sponsor { margin-top:12px; color:var(--muted); font-size:12px; }
+    .muted { color:var(--muted); }
+    .note { background:#fffde7; border:1px solid #f1e6a8; padding:8px 10px; border-radius:10px; font-size:13px; }
+    a { color:#0a58ca; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>LivLivStar Trends</h1>
+    <div id="updated" class="updated"></div>
+    <div id="trends-root">Loading…</div>
+  </div>
+
+  <script>
+  (async () => {
+    const FEED = "./trends.json"; // тот же домен github.io → безопасно
+
+    function shareReport(title, url) {
+      const text = `${title}\nSponsored by www.livlivstar.com`;
+      if (navigator.share) {
+        navigator.share({ title, text, url }).catch(()=>{});
+      } else {
+        navigator.clipboard.writeText(`${title}\n${url}\nSponsored by www.livlivstar.com`);
+        alert("Link copied");
+      }
+    }
+    const list = arr => '<ul>' + (arr||[]).map(x => {
+      const t = x.title || x.item || x.name || x.query || x.kw || x.topic;
+      const author = x.author ? ` — ${x.author}` : '';
+      const extra = x.note ? ` | ${x.note}` : '';
+      const price = x.hint_price ? ` | ${x.hint_price}` : (x.price ? ` | ${x.price}` : '');
+      const trend = x.trend ? ` — ${x.trend}` : '';
+      const rise  = x.rise  ? ` (${x.rise})` : (x.count ? ` (${x.count})` : '');
+      const city  = x.city  ? ` — ${x.city}` : '';
+      const days  = (typeof x.days === 'number') ? ` — in ${x.days} days` : '';
+      const level = x.level ? ` — ${x.level}` : '';
+      const link  = x.link ? ` — <a target="_blank" href="${x.link}">link</a>` : '';
+      const sug   = x.suggestion ? ` — ${x.suggestion}` : '';
+      return `<li><b>${t||''}</b>${author}${extra}${price}${trend}${rise}${city}${days}${level}${sug}${link}</li>`;
+    }).join('') + '</ul>';
+
+    try {
+      const res = await fetch(FEED, { cache: "no-store" });
+      const j = await res.json();
+      const root = document.getElementById("trends-root");
+      const upd = document.getElementById("updated");
+      upd.textContent = j.updated_at ? `Updated: ${new Date(j.updated_at).toLocaleString('en-GB',{hour12:false})}` : '';
+
+      if (!j.reports || !j.reports.length) {
+        root.innerHTML = `<p class="note">No reports yet.</p>`;
+        return;
+      }
+
+      const cards = j.reports.map(r => {
+        const t = new Date(r.id).toLocaleString('en-GB', { hour12:false });
+        const perma = `${location.origin}${location.pathname}#${encodeURIComponent(r.id)}`;
+        const S = r.sections || {};
+        const MK = S.marketplaces || {};
+        const PD = S.product_design_ideas || {};
+        const MI = S.marketing_ideas || {};
+        const SI = S.sales_intel || {};
+        const OP = S.ops_insights || {};
+
+        return `
+          <article id="${encodeURIComponent(r.id)}" class="card">
+            <div class="head">
+              <h3>${r.title} — <span class="muted">${t}</span></h3>
+              <button class="share" onclick="(${shareReport})(\`${r.title} — ${t}\`, \`${perma}\`)">Share</button>
+            </div>
+
+            <h4>UK DIY Trends</h4>${list(S.uk_diy_trends)}
+
+            <h4>A. Product & Design Ideas</h4>
+            <h5>Themes</h5>${list(PD.items)}
+            <h5>Make Today</h5>${list((PD.make_today||[]).map(x=>({title:x})))}
+
+            <h4>B. Marketing Ideas</h4>
+            <h5>Hashtags UK</h5>${list((MI.hashtags_uk||[]).map(x=>({title:x})))}
+            <h5>Viral sounds</h5>${list(MI.viral_sounds)}
+            <h5>Collab targets (UK)</h5>${list(MI.collab_targets)}
+
+            <h4>C. Sales Intel</h4>
+            <h5>Price watch</h5>${list(SI.price_watch)}
+            <h5>Traffic by platform</h5>${list(SI.traffic_by_platform)}
+            <h5>Events (UK, next 30 days)</h5>${list(SI.events_uk)}
+
+            <h4>D. Ops / Management</h4>
+            <h5>Weekly keywords</h5>${list(OP.weekly_keywords)}
+            <h5>Season alerts (&le; 30 days)</h5>${list(OP.season_alerts)}
+            <h5>Demand forecast (14d)</h5>${list(OP.demand_forecast)}
+
+            <h4>Marketplaces</h4>
+            <h5>Amazon</h5>${list(MK.amazon)}
+            <h5>eBay</h5>${list(MK.ebay)}
+            <h5>Etsy</h5>${list(MK.etsy)}
+            <h5>Vinted</h5>${list(MK.vinted)}
+            <h5>Shopify (D2C)</h5>${list(MK.shopify)}
+
+            <h4>Searches Now (UK)</h4>${list(S.searches_now_uk)}
+            <h4>SEO Keywords</h4>${list(S.seo_keywords)}
+            <h4>Books</h4>${list(S.books)}
+            <h4>News</h4>${list(S.news)}
+
+            <div class="sponsor">${r.sponsor||''}</div>
+          </article>
+        `;
+      }).join("");
+
+      root.innerHTML = cards;
+    } catch (e) {
+      document.getElementById("trends-root").innerHTML =
+        `<p class="note">Can't load trends right now.</p>`;
+    }
+  })();
+  </script>
+</body>
+</html>
