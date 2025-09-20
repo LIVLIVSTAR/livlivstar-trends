@@ -1,1 +1,351 @@
-﻿{ "updated_at": "", "reports": [] }
+﻿{
+    "updated_at":  "2025-09-20T10:05:11Z",
+    "reports":  [
+                    {
+                        "id":  "2025-09-20T10:05:11Z",
+                        "title":  "UK DIY \u0026 Stationery Trends",
+                        "region":  "UK",
+                        "sections":  {
+                                         "books":  {
+
+                                                   },
+                                         "seo_keywords":  [
+                                                              {
+                                                                  "kw":  "and",
+                                                                  "rise":  19
+                                                              },
+                                                              {
+                                                                  "kw":  "made",
+                                                                  "rise":  16
+                                                              },
+                                                              {
+                                                                  "kw":  "for",
+                                                                  "rise":  13
+                                                              },
+                                                              {
+                                                                  "kw":  "the",
+                                                                  "rise":  12
+                                                              },
+                                                              {
+                                                                  "kw":  "this",
+                                                                  "rise":  10
+                                                              },
+                                                              {
+                                                                  "kw":  "with",
+                                                                  "rise":  10
+                                                              },
+                                                              {
+                                                                  "kw":  "how",
+                                                                  "rise":  9
+                                                              },
+                                                              {
+                                                                  "kw":  "you",
+                                                                  "rise":  7
+                                                              },
+                                                              {
+                                                                  "kw":  "weekly",
+                                                                  "rise":  7
+                                                              },
+                                                              {
+                                                                  "kw":  "new",
+                                                                  "rise":  7
+                                                              },
+                                                              {
+                                                                  "kw":  "help",
+                                                                  "rise":  6
+                                                              },
+                                                              {
+                                                                  "kw":  "these",
+                                                                  "rise":  6
+                                                              },
+                                                              {
+                                                                  "kw":  "first",
+                                                                  "rise":  5
+                                                              },
+                                                              {
+                                                                  "kw":  "what",
+                                                                  "rise":  5
+                                                              },
+                                                              {
+                                                                  "kw":  "paint",
+                                                                  "rise":  5
+                                                              },
+                                                              {
+                                                                  "kw":  "diy",
+                                                                  "rise":  5
+                                                              },
+                                                              {
+                                                                  "kw":  "project",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "from",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "long",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "need",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "can",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "garage",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "best",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "out",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "painted",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "amp",
+                                                                  "rise":  4
+                                                              },
+                                                              {
+                                                                  "kw":  "app",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "hobby",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "using",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "just",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "their",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "concrete",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "ceiling",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "floor",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "bag",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "pencil",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "again",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "that",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "spread",
+                                                                  "rise":  3
+                                                              },
+                                                              {
+                                                                  "kw":  "technique",
+                                                                  "rise":  3
+                                                              }
+                                                          ],
+                                         "ops_insights":  {
+                                                              "weekly_keywords":  {
+
+                                                                                  },
+                                                              "demand_forecast":  {
+                                                                                      "topic":  "Seasonal DIY",
+                                                                                      "level":  "Watch (14d)"
+                                                                                  },
+                                                              "season_alerts":  [
+
+                                                                                ]
+                                                          },
+                                         "marketing_ideas":  {
+                                                                 "viral_sounds":  {
+
+                                                                                  },
+                                                                 "collab_targets":  {
+
+                                                                                    },
+                                                                 "hashtags_uk":  [
+                                                                                     "#christmas",
+                                                                                     "#star",
+                                                                                     "#snow",
+                                                                                     "#minimal",
+                                                                                     "#halloween",
+                                                                                     "#pastel",
+                                                                                     "#fall",
+                                                                                     "#cat",
+                                                                                     "#diy",
+                                                                                     "#stationery"
+                                                                                 ]
+                                                             },
+                                         "product_design_ideas":  {
+                                                                      "items":  [
+                                                                                    {
+                                                                                        "theme":  "christmas",
+                                                                                        "suggestion":  "сделать набор стикеров"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "star",
+                                                                                        "suggestion":  "сделать мини-календарь/вкладку"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "snow",
+                                                                                        "suggestion":  "сделать набор стикеров"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "minimal",
+                                                                                        "suggestion":  "сделать набор стикеров"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "halloween",
+                                                                                        "suggestion":  "сделать обложку для блокнота"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "pastel",
+                                                                                        "suggestion":  "сделать закладку"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "fall",
+                                                                                        "suggestion":  "сделать набор стикеров"
+                                                                                    },
+                                                                                    {
+                                                                                        "theme":  "cat",
+                                                                                        "suggestion":  "сделать обложку для блокнота"
+                                                                                    }
+                                                                                ],
+                                                                      "make_today":  [
+                                                                                         "Сегодня: christmas — стикеры",
+                                                                                         "Сегодня: star — стикеры"
+                                                                                     ]
+                                                                  },
+                                         "uk_diy_trends":  [
+                                                               {
+                                                                   "title":  "Embroidery starter kits",
+                                                                   "score":  8,
+                                                                   "why":  "mindful хобби, лёгкий вход"
+                                                               },
+                                                               {
+                                                                   "title":  "Candle making kits",
+                                                                   "score":  8,
+                                                                   "why":  "подарочно, сезонно"
+                                                               },
+                                                               {
+                                                                   "title":  "Resin art molds",
+                                                                   "score":  7,
+                                                                   "why":  "вирусные видео, декор"
+                                                               },
+                                                               {
+                                                                   "title":  "Wax seal kits",
+                                                                   "score":  7,
+                                                                   "why":  "персонализация, письма"
+                                                               },
+                                                               {
+                                                                   "title":  "Journaling stickers",
+                                                                   "score":  7,
+                                                                   "why":  "планеры и эстетика"
+                                                               },
+                                                               {
+                                                                   "title":  "Pocket notebooks",
+                                                                   "score":  6,
+                                                                   "why":  "малый формат, повседневно"
+                                                               },
+                                                               {
+                                                                   "title":  "Eco refill pens",
+                                                                   "score":  6,
+                                                                   "why":  "sustainable-тренд"
+                                                               }
+                                                           ],
+                                         "news":  [
+                                                      {
+                                                          "link":  "https://news.google.com/rss/articles/CBMixwFBVV95cUxQWk5sNlR6bExsTXlrWTNLTWxzZ1ZPb3Z5LUZxLTA0S3o0Ri0zRmdaUzFqVTlWakxhRk56dEJRcUlUcHVPOFA3WnVKUmVLX1VoNXZTS0RDdkd4Z045eVp0eXhGRHktTlVHbnM5NVhBUUkyNmVFRWRweG9tSHVERzFyVFRUZVdkODZMbkU2ZlNCOS1hU3RkWkZaVXdXSFY5dC13VThWdFphWjBFMTVuaGUwRTJoRENoNldQRWxKQVFzRWpHb3NKNXdj?oc=5",
+                                                          "title":  "Leidos unveils Sea Dagger for UK Commando Insertion Craft requirement - navalnews.com"
+                                                      },
+                                                      {
+                                                          "link":  "https://news.google.com/rss/articles/CBMidkFVX3lxTE13M3VoMElYQ05YMktaTjhwb29RLUNCbk8xTWRpX3RiSERqNFZSSjRYdlZPQTJjZmZNckRuRm9RVFptcW5LX2wtUjVPSnVJTDdBVTE2YUVsY2owcm8xR2QxQkU5YjJpRmFGNzRTeXZCd0FJMTZzdmc?oc=5",
+                                                          "title":  "Restaurant review: Craft \u0026 Cleaver - St Albans Times"
+                                                      },
+                                                      {
+                                                          "link":  "https://news.google.com/rss/articles/CBMiqAFBVV95cUxORk0weFJZbEl3bUw2R05KRktDekZVOUFOUVlzbW82bldyeERlUWNrM3JTS2hNZkgzdG9pUk9zbEJKY2lNYWgzeDZWSm95Vmhpdlc5SzlPQjEtMHpwTTNKMThxMWZxZko4Q3EwMmFINFRGajlXVWtJTEhra1RqbzJodHVGcVVzaHJJemY0c0p6MmRndEtmblQ0b1RueGpUaTZkS0UzMVRCd1c?oc=5",
+                                                          "title":  "Exclusive Look at Topps’ Perfect Pack: The New Premier League Hobby Box - VERSUS - The Future of Football"
+                                                      }
+                                                  ],
+                                         "searches_now_uk":  {
+
+                                                             },
+                                         "marketplaces":  {
+                                                              "etsy":  {
+
+                                                                       },
+                                                              "ebay":  {
+
+                                                                       },
+                                                              "amazon":  {
+
+                                                                         },
+                                                              "vinted":  {
+
+                                                                         },
+                                                              "shopify":  {
+
+                                                                          }
+                                                          },
+                                         "sales_intel":  {
+                                                             "traffic_by_platform":  [
+                                                                                         {
+                                                                                             "pulse":  "Watch",
+                                                                                             "platform":  "Amazon"
+                                                                                         },
+                                                                                         {
+                                                                                             "pulse":  "Watch",
+                                                                                             "platform":  "eBay"
+                                                                                         },
+                                                                                         {
+                                                                                             "pulse":  "Watch",
+                                                                                             "platform":  "Etsy"
+                                                                                         },
+                                                                                         {
+                                                                                             "pulse":  "Watch",
+                                                                                             "platform":  "Vinted"
+                                                                                         },
+                                                                                         {
+                                                                                             "pulse":  "Watch",
+                                                                                             "platform":  "Shopify"
+                                                                                         }
+                                                                                     ],
+                                                             "events_uk":  [
+
+                                                                           ],
+                                                             "price_watch":  [
+
+                                                                             ]
+                                                         }
+                                     },
+                        "sponsor":  "Sponsored by www.livlivstar.com"
+                    }
+                ]
+}
