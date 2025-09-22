@@ -1,64 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LivLivStar Trends</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>LIVLIVSTAR • Daily UK Trends</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-body { font-family: Arial, sans-serif; background: #fff7ee; color: #333; margin: 0; padding: 0; }
-.wrap { max-width: 800px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-h1 { font-size: 24px; margin-bottom: 10px; }
-.note { background: #fff8e5; padding: 10px; border-radius: 8px; }
-.sponsor { color: #999; font-size: 12px; margin-top: 8px; }
-button { padding: 6px 10px; margin-top: 5px; background: #f6e8a8; border: none; border-radius: 6px; cursor: pointer; }
-button:hover { background: #f4d96d; }
+  :root{--bg:#FFF8E7;--fg:#141414;--muted:#6b7280;--card:#fff;--radius:18px}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,Segoe UI,Arial}
+  .wrap{max-width:1024px;margin:32px auto;padding:24px}
+  .report{background:var(--card);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.06);overflow:hidden}
+  .hd{padding:28px 24px 16px;border-bottom:1px solid #eee}
+  .title{margin:0 0 4px;font-size:28px}
+  .sub{color:var(--muted);font-size:14px}
+  .grid{display:grid;grid-template-columns:1fr;gap:16px;padding:0 24px 24px}
+  @media(min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+  section{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px}
+  h2{font-size:18px;margin:0 0 8px}
+  ul{margin:8px 0 0 16px} li{margin:4px 0}
+  .onecol{grid-column:1/-1}
+  .palette{display:flex;gap:6px;margin:6px 0}
+  .sw{width:22px;height:22px;border-radius:6px;border:1px solid #e5e7eb}
+  .footer{padding:16px 24px;border-top:1px solid #eee;color:#6b7280;display:flex;justify-content:space-between}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>LivLivStar Trends</h1>
-<small id="updated"></small>
-<div id="trends-root">Loading…</div>
-</div>
+  <div class="wrap">
+    <div class="report">
+      <div class="hd">
+        <h1 class="title">LIVLIVSTAR • Daily UK Trends</h1>
+        <div class="sub" id="date">—</div>
+      </div>
+      <div class="grid">
+        <section>
+          <h2>🎨 Product & Design Ideas</h2>
+          <div><b>Theme:</b> <span id="theme"></span></div>
+          <div class="palette" id="palette"></div>
+          <div><b>Memes/Characters:</b> <span id="memes"></span></div>
+          <div><b>Popular in UK search:</b> <span id="popular"></span></div>
+        </section>
+        <section>
+          <h2>🚀 Marketing</h2>
+          <div><b>TikTok UK hashtags:</b> <span id="tt"></span></div>
+          <div><b>Viral sounds:</b> <span id="sounds"></span></div>
+          <div><b>Collab ideas:</b> <span id="collabs"></span></div>
+        </section>
+        <section>
+          <h2>📅 Events (UK, Next 30 Days)</h2>
+          <ul id="events"></ul>
+        </section>
+        <section>
+          <h2>🔎 SEO / Top 5 Keywords (UK)</h2>
+          <ol id="seo"></ol>
+        </section>
+        <section>
+          <h2>📌 Pinterest UK</h2>
+          <ul id="pinterest"></ul>
+        </section>
+        <section>
+          <h2>🛍️ Amazon / eBay / Shopify</h2>
+          <ul id="markets"></ul>
+        </section>
+        <section>
+          <h2>📚 Books & Reading (UK)</h2>
+          <ul id="books"></ul>
+        </section>
+        <section class="onecol">
+          <h2>📈 Trending / What’s Going Up</h2>
+          <ul id="up"></ul>
+        </section>
+        <section class="onecol">
+          <h2>⚠️ Alerts & Seasonality</h2>
+          <ul id="alerts"></ul>
+        </section>
+      </div>
+      <div class="footer">
+        <span>Sponsored by livlivstar.com</span>
+        <span id="build"></span>
+      </div>
+    </div>
+  </div>
 
 <script>
-(async () => {
-  const FEED = "https://livlivstar.github.io/livlivstar-trends/trends.json";
+(async ()=>{
+  // тут НЕ raw.githubusercontent.com; берём файл, лежащий рядом на GitHub Pages
+  const res = await fetch('./trends.json?cache=' + Date.now());
+  const S = await res.json();
 
-  function shareReport(title, url) {
-    const text = `${title}\nSponsored by www.livlivstar.com`;
-    if (navigator.share) {
-      navigator.share({ title, text, url }).catch(()=>{});
-    } else {
-      navigator.clipboard.writeText(`${title}\n${url}\nSponsored by www.livlivstar.com`);
-      alert('Link copied');
-    }
-  }
+  document.getElementById('date').textContent = 'UK • ' + (S.date||'');
+  document.getElementById('theme').textContent = S.design?.theme||'';
+  const pal = document.getElementById('palette');
+  (S.design?.palette||[]).forEach(hex=>{
+    const d=document.createElement('div'); d.className='sw'; d.style.background=hex; d.title=hex; pal.appendChild(d);
+  });
+  document.getElementById('memes').textContent = (S.design?.memes||[]).join(', ');
+  document.getElementById('popular').textContent = (S.design?.popular||[]).join(', ');
 
-  try {
-    const res = await fetch(FEED);
-    const data = await res.json();
+  document.getElementById('tt').textContent      = (S.marketing?.tiktok_hashtags||[]).join(' ');
+  document.getElementById('sounds').textContent  = (S.marketing?.viral_sounds||[]).join('; ');
+  document.getElementById('collabs').textContent = (S.marketing?.collabs||[]).join('; ');
 
-    document.getElementById("updated").textContent =
-      data.updated_at ? `Updated: ${new Date(data.updated_at).toLocaleString('en-GB')}` : "";
+  (S.eventsUK||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; events.appendChild(li); });
+  (S.seo||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; seo.appendChild(li); });
+  (S.pinterest||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; pinterest.appendChild(li); });
 
-    const root = document.getElementById("trends-root");
-    if (!data.reports || !data.reports.length) {
-      root.innerHTML = `<p class="note">Can't load trends right now.</p>`;
-      return;
-    }
+  ['amazon','ebay','shopify'].forEach(k=>{
+    const li=document.createElement('li');
+    li.innerHTML = `<b>${k[0].toUpperCase()+k.slice(1)}:</b> ${(S.marketplaces||{})[k]||''}`;
+    markets.appendChild(li);
+  });
 
-    root.innerHTML = data.reports.map(r => `
-      <article>
-        <h3>${r.title}</h3>
-        <p>${r.text || ""}</p>
-        <button onclick="shareReport('${r.title}','${r.url || ""}')">Share</button>
-        <div class="sponsor">Sponsored by www.livlivstar.com</div>
-      </article>
-    `).join("");
-  } catch (e) {
-    document.getElementById("trends-root").innerHTML = `<p class="note">Can't load trends right now.</p>`;
-  }
+  (S.books||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; books.appendChild(li); });
+  (S.trendingUp||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; up.appendChild(li); });
+  (S.alerts||[]).forEach(x=>{ const li=document.createElement('li'); li.textContent=x; alerts.appendChild(li); });
+
+  const now = new Date();
+  document.getElementById('build').textContent = `Build ${now.toLocaleDateString('en-GB')} ${now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}`;
 })();
 </script>
 </body>
