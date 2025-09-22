@@ -1,20 +1,25 @@
-﻿{
-    "updated_at":  "2025-09-20T11:59:47Z",
-    "sections":  [
-                     {
-                         "items":  [
-                                       "Ghost bookmarks (pastel beige) ↑",
-                                       "Studygram autumn desk setups +18%",
-                                       {
-                                           "url":  "https://example.com/planners",
-                                           "title":  "Minimal planner templates"
-                                       },
-                                       {
-                                           "tag":  "Etsy",
-                                           "title":  "Warm neutral sticker sheets"
-                                       }
-                                   ],
-                         "title":  "UK DIY \u0026 Stationery Trends"
-                     }
-                 ]
+{
+  "date": "22 Sep 2025",
+  "design": {
+    "theme": "Pumpkins + Cozy Autumn",
+    "palette": ["#F5B041","#8E44AD","#FFF8E7"],
+    "memes": ["Labubu","Sanrio Halloween"],
+    "popular": ["planners","cozy bookmarks","ghost stickers"]
+  },
+  "marketing": {
+    "tiktok_hashtags": ["#CozyAutumn","#StudyAesthetic","#StationeryUK","#BookTokUK"],
+    "viral_sounds": ["Autumn Breeze (UK trending)","Study Lo-Fi"],
+    "collabs": ["UK brand collab opportunity","Stationery Market UK"]
+  },
+  "eventsUK": ["Wigtown Book Festival — 26 Sep to 5 Oct (Scotland)"],
+  "seo": ["halloween bookmarks","autumn planner uk","cozy stickers","study journal uk","pumpkin stationery"],
+  "pinterest": ["Ghost bookmarks","Vintage autumn planners"],
+  "marketplaces": {
+    "amazon": "Connect PA-API for Best Sellers (fallback)",
+    "ebay": "Connect eBay App ID for live search (fallback)",
+    "shopify": "Connect Admin API for yesterday’s activity (fallback)"
+  },
+  "books": ["Hamnet — Maggie O'Farrell"],
+  "trendingUp": ["romantasy books","cozy autumn decor"],
+  "alerts": ["Halloween content demand rising"]
 }
